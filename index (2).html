@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Kedua - Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+
+        <!-- Declarative Rendering & Conditional Rendering -->
+        <p v-if="isVisible">Selamat datang di tugas kedua!</p>
+        <button @click="toggleVisible">
+            {{ isVisible ? 'Sembunyikan' : 'Tampilkan' }} Pesan
+        </button>
+
+        <!-- Attribute Bindings -->
+        <img :src="imageSrc" :alt="altText" width="200" />
+
+        <!-- Event Listeners -->
+        <p>Jumlah klik: {{ counter }}</p>
+        <button @click="incrementCounter">Klik Saya</button>
+
+        <!-- Form Bindings -->
+        <form @submit.prevent="submitForm">
+            <input type="text" v-model="nama" placeholder="Masukkan nama" />
+            <button type="submit">Submit</button>
+        </form>
+        <p v-if="nama">Halo, {{ nama }}!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
